@@ -69,35 +69,35 @@ function clearErrors() {
   ['name', 'phone'].forEach((field) => setError(field, ''));
 }
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  clearErrors();
-  successMessage.classList.remove('is-visible');
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   clearErrors();
+//   successMessage.classList.remove('is-visible');
 
-  const formData = new FormData(form);
-  const values = {
-    name: String(formData.get('name') || ''),
-    phone: String(formData.get('phone') || ''),
-  };
+//   const formData = new FormData(form);
+//   const values = {
+//     name: String(formData.get('name') || ''),
+//     phone: String(formData.get('phone') || ''),
+//   };
 
-  const errors = validateForm(values);
+//   const errors = validateForm(values);
 
-  setError('name', errors.name);
-  setError('phone', errors.phone);
+//   setError('name', errors.name);
+//   setError('phone', errors.phone);
 
-  if (errors.name || errors.phone) {
-    return;
-  }
+//   if (errors.name || errors.phone) {
+//     return;
+//   }
 
-  console.log('Заявка:', values);
-  successMessage.classList.add('is-visible');
-  form.reset();
+//   console.log('Заявка:', values);
+//   successMessage.classList.add('is-visible');
+//   form.reset();
 
-  setTimeout(() => {
-    successMessage.classList.remove('is-visible');
-    closeModal();
-  }, 1800);
-});
+//   setTimeout(() => {
+//     successMessage.classList.remove('is-visible');
+//     closeModal();
+//   }, 1800);
+// });
 
 const observer = new IntersectionObserver(
   (entries, observerInstance) => {
