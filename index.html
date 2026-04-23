@@ -16,7 +16,7 @@
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-theme="dark">
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="#top" class="logo" aria-label="AutoKey-Lida">
@@ -44,6 +44,10 @@
           </svg>
           +375 (33) 91-777-47
         </a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему" aria-pressed="false" title="Переключить тему">
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+        </button>
         <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
           <span></span>
           <span></span>
@@ -57,6 +61,11 @@
         <a href="#services">Услуги</a>
         <a href="#advantages">Преимущества</a>
         <a href="#contacts">Контакты</a>
+        <button class="theme-toggle theme-toggle--mobile" id="themeToggleMobile" type="button" aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀️</span>
+          <span class="theme-toggle__text">Светлая тема</span>
+        </button>
         <a class="mobile-menu__phone" href="tel:+375339177747">Позвонить сейчас</a>
       </div>
     </div>
@@ -201,31 +210,31 @@
         </div>
 
         <div class="cards-grid">
-          <article class="feature-card reveal">
+          <article class="card reveal">
             <div class="feature-card__icon">✓</div>
             <h3>Гарантия качества</h3>
             <p>Работаем аккуратно, используем надежные комплектующие и отвечаем за результат.</p>
           </article>
 
-          <article class="feature-card reveal">
+          <article class="card reveal">
             <div class="feature-card__icon">⌘</div>
             <h3>Самый большой выбор ключей в городе</h3>
             <p>Изготавливаем стандартные и редкие типы ключей для дома, офиса и авто.</p>
           </article>
 
-          <article class="feature-card reveal">
+          <article class="card reveal">
             <div class="feature-card__icon">⚡</div>
             <h3>Быстрое обслуживание</h3>
             <p>Большинство простых заказов выполняем всего за несколько минут.</p>
           </article>
 
-          <article class="feature-card reveal">
+          <article class="card reveal">
             <div class="feature-card__icon">₽</div>
             <h3>Доступные цены с рассрочкой до двух месяцев</h3>
             <p>Прозрачная стоимость без скрытых доплат. Цены уточняйте по телефону.</p>
           </article>
 
-          <article class="feature-card reveal">
+          <article class="card reveal">
             <div class="feature-card__icon">➜</div>
             <h3>Выезд мастера</h3>
             <p>При необходимости поможем на месте и оперативно решим проблему с доступом.</p>

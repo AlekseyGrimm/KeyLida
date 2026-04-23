@@ -1,25 +1,63 @@
 :root {
-  --bg: #f8fafc;
+  --bg: #08111f;
+  --bg-soft: #0f172a;
+  --surface: #111c31;
+  --surface-2: #16233b;
+  --text: #e5edf8;
+  --muted: #94a3b8;
+  --line: rgba(148, 163, 184, 0.18);
+  --card: #111c31;
+  --dark: #020817;
+  --dark-2: #0f172a;
+  --accent: #f59e0b;
+  --accent-2: #fbbf24;
+  --accent-soft: rgba(245, 158, 11, 0.14);
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --success-text: #6ee7b7;
+  --danger: #f87171;
+  --header-bg: rgba(8, 17, 31, 0.82);
+  --header-border: rgba(148, 163, 184, 0.14);
+  --panel: rgba(17, 28, 49, 0.88);
+  --panel-strong: #0b1220;
+  --button-bg: #111c31;
+  --button-text: #e5edf8;
+  --button-border: rgba(148, 163, 184, 0.18);
+  --button-ghost-bg: rgba(255,255,255,0.04);
+  --shadow-sm: 0 10px 30px rgba(2, 8, 23, 0.28);
+  --shadow-md: 0 18px 40px rgba(2, 8, 23, 0.34);
+  --shadow-lg: 0 28px 70px rgba(2, 8, 23, 0.45);
+  --radius-sm: 16px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --container: 1200px;
+}
+
+html[data-theme="light"] {
+  --bg: ##f1f4f7;
   --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: ##f1f4f7;
   --text: #0f172a;
   --muted: #64748b;
   --line: #e2e8f0;
   --card: #ffffff;
   --dark: #0f172a;
   --dark-2: #1e293b;
-  --accent: #f59e0b;
-  --accent-2: #fbbf24;
   --accent-soft: #fff7e6;
   --success-bg: #ecfdf5;
   --success-text: #047857;
   --danger: #dc2626;
-  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-border: rgba(226, 232, 240, 0.9);
+  --panel: rgba(255,255,255,0.86);
+  --panel-strong: #0f172a;
+  --button-bg: #ffffff;
+  --button-text: #0f172a;
+  --button-border: #e2e8f0;
+  --button-ghost-bg: rgba(255, 255, 255, 0.301);
+  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.108);
   --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 28px 70px rgba(15, 23, 42, 0.12);
-  --radius-sm: 16px;
-  --radius-md: 22px;
-  --radius-lg: 30px;
-  --container: 1200px;
 }
 
 * {
@@ -112,8 +150,8 @@ button {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
 }
 
 .header__inner {
@@ -172,7 +210,7 @@ button {
 }
 
 .nav a {
-  color: #475569;
+  color: var(--muted);
   font-weight: 500;
   transition: 0.25s ease;
 }
@@ -194,7 +232,7 @@ button {
   padding: 12px 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--button-bg);
   font-size: 14px;
   font-weight: 700;
   box-shadow: var(--shadow-sm);
@@ -219,7 +257,7 @@ button {
   padding: 0;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fff;
+  background: var(--button-bg);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -249,7 +287,7 @@ button {
 .mobile-menu {
   display: none;
   border-top: 1px solid var(--line);
-  background: #fff;
+  background: var(--button-bg);
 }
 
 .mobile-menu.is-open {
@@ -266,12 +304,12 @@ button {
 .mobile-menu__inner a {
   padding: 14px 10px;
   border-radius: 14px;
-  color: #334155;
+  color: var(--text);
   font-weight: 500;
 }
 
 .mobile-menu__inner a:hover {
-  background: #f8fafc;
+  background: var(--surface-2);
 }
 
 .mobile-menu__phone {
@@ -324,9 +362,9 @@ button {
   padding: 10px 16px;
   border: 1px solid #fde7b0;
   border-radius: 999px;
-  background: #fff;
+  background: var(--button-bg);
   box-shadow: var(--shadow-sm);
-  color: #334155;
+  color: var(--text);
   font-size: 14px;
   font-weight: 600;
 }
@@ -371,10 +409,10 @@ button {
   padding: 11px 16px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--button-bg);
   font-size: 14px;
   font-weight: 600;
-  color: #475569;
+  color: var(--muted);
   box-shadow: var(--shadow-sm);
 }
 
@@ -404,21 +442,21 @@ button {
 }
 
 .btn--light {
-  background: #fff;
+  background: var(--button-bg);
   color: var(--text);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
 
 .btn--dark {
-  background: var(--dark);
+  background: var(--panel-strong);
   color: #fff;
 }
 
 .btn--ghost {
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--button-border);
+  color: var(--button-text);
+  background: var(--button-ghost-bg);
 }
 
 .btn--full {
@@ -433,7 +471,7 @@ button {
   padding: 24px;
   border: 1px solid rgba(255,255,255,0.7);
   border-radius: 32px;
-  background: rgba(255,255,255,0.86);
+  background: var(--panel);
   box-shadow: var(--shadow-lg);
 }
 
@@ -450,7 +488,7 @@ button {
 .hero-card__main {
   padding: 24px;
   border-radius: 28px;
-  background: var(--dark);
+  background: var(--panel-strong);
   color: #fff;
 }
 
@@ -481,7 +519,7 @@ button {
   border-radius: 999px;
   background: rgba(255,255,255,0.1);
   font-size: 12px;
-  color: #cbd5e1;
+  color: var(--muted);
 }
 
 .hero-card__label {
@@ -500,7 +538,7 @@ button {
 
 .hero-card__desc {
   margin: 16px 0 0;
-  color: #cbd5e1;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.8;
 }
@@ -514,7 +552,7 @@ button {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: #f8fafc;
+  background: var(--surface-2);
 }
 
 .mini-card p,
@@ -621,12 +659,12 @@ button {
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: #f8fafc;
+  background: var(--surface-2);
 }
 
 .feature-card:hover {
   border-color: #f5d38b;
-  background: #fff;
+  background: var(--button-bg);
   box-shadow: var(--shadow-sm);
 }
 
@@ -636,7 +674,7 @@ button {
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: #fef3c7;
+  background: var(--accent-soft);
   color: #b45309;
   font-size: 22px;
   font-weight: 800;
@@ -652,10 +690,10 @@ button {
   padding: 18px 16px;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background: #fff;
+  background: var(--button-bg);
   text-align: center;
   font-weight: 700;
-  color: #475569;
+  color: var(--muted);
   box-shadow: var(--shadow-sm);
 }
 
@@ -673,7 +711,7 @@ button {
 .contacts-card {
   padding: 34px;
   border-radius: 32px;
-  background: var(--dark);
+  background: var(--panel-strong);
   color: #fff;
   box-shadow: var(--shadow-lg);
 }
@@ -695,7 +733,7 @@ button {
 
 .contact-item span,
 .contact-item a {
-  color: #cbd5e1;
+  color: var(--muted);
   line-height: 1.7;
 }
 
@@ -715,7 +753,7 @@ button {
   min-height: 420px;
   border-radius: 32px;
   border: 1px solid var(--line);
-  background: #f1f5f9;
+  background: var(--surface-2);
   box-shadow: var(--shadow-sm);
 }
 
@@ -735,11 +773,11 @@ button {
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: #f8fafc;
+  background: var(--surface-2);
 }
 
 .review-card:hover {
-  background: #fff;
+  background: var(--button-bg);
   box-shadow: var(--shadow-sm);
 }
 
@@ -752,7 +790,7 @@ button {
 .footer {
   border-top: 1px solid rgba(255,255,255,0.08);
   background: var(--dark);
-  color: #cbd5e1;
+  color: var(--muted);
 }
 
 .footer__grid {
@@ -812,7 +850,7 @@ button {
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(255,255,255,0.06);
-  color: #cbd5e1;
+  color: var(--muted);
   font-size: 13px;
   font-weight: 800;
   transition: 0.25s ease;
@@ -860,7 +898,7 @@ button {
   margin: 8vh auto 0;
   padding: 28px;
   border-radius: 30px;
-  background: #fff;
+  background: var(--button-bg);
   box-shadow: var(--shadow-lg);
   z-index: 1;
 }
@@ -873,7 +911,7 @@ button {
   height: 42px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fff;
+  background: var(--button-bg);
   color: var(--muted);
   font-size: 28px;
   line-height: 1;
@@ -907,7 +945,7 @@ button {
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #334155;
+  color: var(--text);
 }
 
 .modal-form input {
@@ -1057,4 +1095,150 @@ button {
   .mini-card strong {
     font-size: 34px;
   }
+}
+
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle__icon--sun {
+  display: none;
+}
+
+html[data-theme="light"] .theme-toggle__icon--sun {
+  display: inline;
+}
+
+html[data-theme="light"] .theme-toggle__icon--moon {
+  display: none;
+}
+
+.theme-toggle--mobile {
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.nav a,
+.mobile-menu__inner a,
+.hero__badge,
+.hero__stats span,
+.card,
+.feature-card,
+.review-card,
+.brand,
+.map-card,
+.modal__dialog,
+.modal-form input,
+.burger,
+.phone-link,
+.theme-toggle,
+.mobile-menu {
+  border-color: var(--line);
+}
+
+.mobile-menu {
+  background: var(--surface);
+}
+
+.mobile-menu__inner a:hover {
+  background: var(--surface-2);
+}
+
+.hero-card__main,
+.contacts-card,
+.footer {
+  background: var(--panel-strong);
+}
+
+.mini-card,
+.feature-card,
+.review-card,
+.map-card,
+.section--white,
+.brand {
+  background: var(--surface-2);
+}
+
+.hero-card__side .mini-card,
+.card,
+.modal__dialog,
+.modal-form input,
+.hero__badge,
+.hero__stats span {
+  background: var(--surface);
+}
+
+.modal-form span {
+  color: var(--text);
+}
+
+.logo__text small,
+.section-heading p,
+.card p,
+.feature-card p,
+.review-card p,
+.footer__links span,
+.footer__links a,
+.footer__text,
+.footer__policy,
+.contact-item span,
+.contact-item a,
+.hero-card__desc,
+.hero-card__label,
+.hero-card__top span,
+.mini-card p,
+.mini-card span {
+  color: var(--muted);
+}
+
+.section-badge,
+.mini-card--accent,
+.feature-card__icon {
+  background: var(--accent-soft);
+}
+
+.phone-link,
+.burger,
+.theme-toggle,
+.btn--light {
+  border: 1px solid var(--button-border);
+}
+
+.btn--ghost:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+html[data-theme="light"] .btn--ghost:hover {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+html[data-theme="light"] .contacts-card,
+html[data-theme="light"] .hero-card__main,
+html[data-theme="light"] .footer {
+  background: var(--panel-strong);
+}
+
+html[data-theme="light"] .mobile-menu__phone {
+  background: var(--dark);
 }
