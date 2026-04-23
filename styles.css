@@ -33,16 +33,18 @@
 }
 
 html[data-theme="light"] {
-  --bg: ##f1f4f7;
+  --bg: #f8fafc;
   --bg-soft: #ffffff;
   --surface: #ffffff;
-  --surface-2: ##f1f4f7;
+  --surface-2: #f1f4f7;
   --text: #0f172a;
   --muted: #64748b;
   --line: #e2e8f0;
   --card: #ffffff;
   --dark: #0f172a;
   --dark-2: #1e293b;
+  --accent: #f59e0b;
+  --accent-2: #fbbf24;
   --accent-soft: #fff7e6;
   --success-bg: #ecfdf5;
   --success-text: #047857;
@@ -55,9 +57,13 @@ html[data-theme="light"] {
   --button-text: #0f172a;
   --button-border: #e2e8f0;
   --button-ghost-bg: rgba(255, 255, 255, 0.301);
-  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.108);
+  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 28px 70px rgba(15, 23, 42, 0.12);
+  --radius-sm: 16px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --container: 1200px;
 }
 
 * {
@@ -455,7 +461,7 @@ button {
 
 .btn--ghost {
   border: 1px solid var(--button-border);
-  color: var(--button-text);
+  color: #fff;
   background: var(--button-ghost-bg);
 }
 
@@ -586,6 +592,53 @@ button {
   background: var(--accent-soft);
 }
 
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.faq-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.faq-card p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.seo-text {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.seo-text p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 18px;
+}
+
+.seo-text p + p {
+  margin-top: 18px;
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -711,7 +764,7 @@ button {
 .contacts-card {
   padding: 34px;
   border-radius: 32px;
-  background: var(--panel-strong);
+  background: var(--dark);
   color: #fff;
   box-shadow: var(--shadow-lg);
 }
@@ -849,7 +902,7 @@ button {
   place-items: center;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
+  background: var(--button-ghost-bg);
   color: var(--muted);
   font-size: 13px;
   font-weight: 800;
@@ -1009,7 +1062,8 @@ button {
   }
 
   .cards-grid,
-  .cards-grid--reviews {
+  .cards-grid--reviews,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1034,7 +1088,8 @@ button {
 
   .cards-grid,
   .cards-grid--reviews,
-  .brands-grid {
+  .brands-grid,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1057,7 +1112,8 @@ button {
   }
 
   .section-heading p,
-  .hero__text {
+  .hero__text,
+  .seo-text p {
     font-size: 16px;
   }
 
@@ -1073,7 +1129,8 @@ button {
 
   .cards-grid,
   .cards-grid--reviews,
-  .brands-grid {
+  .brands-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1153,7 +1210,9 @@ html[data-theme="light"] .theme-toggle__icon--moon {
 .burger,
 .phone-link,
 .theme-toggle,
-.mobile-menu {
+.mobile-menu,
+.faq-card,
+.seo-text {
   border-color: var(--line);
 }
 
@@ -1176,7 +1235,8 @@ html[data-theme="light"] .theme-toggle__icon--moon {
 .review-card,
 .map-card,
 .section--white,
-.brand {
+.brand,
+.faq-card {
   background: var(--surface-2);
 }
 
@@ -1185,7 +1245,8 @@ html[data-theme="light"] .theme-toggle__icon--moon {
 .modal__dialog,
 .modal-form input,
 .hero__badge,
-.hero__stats span {
+.hero__stats span,
+.seo-text {
   background: var(--surface);
 }
 
@@ -1208,7 +1269,9 @@ html[data-theme="light"] .theme-toggle__icon--moon {
 .hero-card__label,
 .hero-card__top span,
 .mini-card p,
-.mini-card span {
+.mini-card span,
+.faq-card p,
+.seo-text p {
   color: var(--muted);
 }
 
@@ -1231,12 +1294,6 @@ html[data-theme="light"] .theme-toggle__icon--moon {
 
 html[data-theme="light"] .btn--ghost:hover {
   background: rgba(15, 23, 42, 0.04);
-}
-
-html[data-theme="light"] .contacts-card,
-html[data-theme="light"] .hero-card__main,
-html[data-theme="light"] .footer {
-  background: var(--panel-strong);
 }
 
 html[data-theme="light"] .mobile-menu__phone {
