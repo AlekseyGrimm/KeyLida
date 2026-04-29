@@ -1514,6 +1514,61 @@ html[data-theme="light"] .mobile-menu__phone {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .page-hero {
+    padding-top: 36px;
+  }
+
+  .page-hero__grid {
+    gap: 28px;
+    min-width: 0;
+  }
+
+  .page-hero__grid > * {
+    min-width: 0;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 10vw, 40px);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  .hero__badge {
+    max-width: 100%;
+    align-items: flex-start;
+    white-space: normal;
+  }
+
+  .hero__badge span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__text {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hero__buttons {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    white-space: normal;
+  }
+
   .content-card,
   .service-summary,
   .cta-card,
