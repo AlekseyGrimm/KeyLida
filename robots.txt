@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://autokey-lida.by/sitemap.xml
